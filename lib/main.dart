@@ -78,12 +78,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   OutlineButton customOutlineButton(String val) {
-    return OutlineButton(
-      padding: EdgeInsets.all(25.0),
-      onPressed: () {},
-      child: Text(
-        val,
-        style: TextStyle(fontSize: 25.0),
+    return Expanded(
+      child: OutlineButton(
+        padding: EdgeInsets.all(25.0),
+        onPressed: () {},
+        child: Text(
+          val,
+          style: TextStyle(fontSize: 25.0),
+        ),
       ),
     );
   }
