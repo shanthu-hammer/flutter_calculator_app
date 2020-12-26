@@ -41,18 +41,49 @@ class _HomePageState extends State<HomePage> {
             ),
             Row(
               children: [
-                OutlineButton(
-                  padding: EdgeInsets.all(25.0),
-                  onPressed: () {},
-                  child: Text(
-                    '9',
-                    style: TextStyle(fontSize: 25.0),
-                  ),
-                )
+                customOutlineButton('9'),
+                customOutlineButton('8'),
+                customOutlineButton('7'),
+                customOutlineButton('+'),
+              ],
+            ),
+            Row(
+              children: [
+                customOutlineButton('6'),
+                customOutlineButton('5'),
+                customOutlineButton('4'),
+                customOutlineButton('-'),
+              ],
+            ),
+            Row(
+              children: [
+                customOutlineButton('3'),
+                customOutlineButton('2'),
+                customOutlineButton('1'),
+                customOutlineButton('X'),
+              ],
+            ),
+            Row(
+              children: [
+                customOutlineButton('C'),
+                customOutlineButton('0'),
+                customOutlineButton('='),
+                customOutlineButton('/'),
               ],
             )
           ],
         ),
+      ),
+    );
+  }
+
+  OutlineButton customOutlineButton(String val) {
+    return OutlineButton(
+      padding: EdgeInsets.all(25.0),
+      onPressed: () {},
+      child: Text(
+        val,
+        style: TextStyle(fontSize: 25.0),
       ),
     );
   }
