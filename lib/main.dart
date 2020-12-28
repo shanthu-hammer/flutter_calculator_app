@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.all(10.0),
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  '0',
+                  text,
                   style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                 ),
               ),
@@ -90,5 +90,39 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  int first, second;
+  String res, text = '', opp;
+  void btnClicked(String btnText) {
+    if (btnText == 'C') {
+      res = '';
+      text = '';
+      first = 0;
+      second = 0;
+    } else if (btnText == '+' ||
+        btnText == '-' ||
+        btnText == 'X' ||
+        btnText == '/') {
+      first = int.parse(text);
+      res = '';
+      opp = btnText;
+    } else if (btnText == '=') {
+      second = int.parse(text);
+      if (opp == '+') {
+        res = (first + second).toString();
+      } else if (opp == '-') {
+        res = (first - second).toString();
+      } else if (opp == 'X') {
+        res = (first * second).toString();
+      } else if (opp == '/') {
+        res = (first ~/ second).toString();
+      }
+    } else {
+      res = text + btnText;
+    }
+    setState(() {
+      text = res;
+    });
   }
 }
