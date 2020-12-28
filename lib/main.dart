@@ -77,14 +77,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  OutlineButton customOutlineButton(String val) {
+  Widget customOutlineButton(String val) {
     return Expanded(
       child: OutlineButton(
         padding: EdgeInsets.all(25.0),
-        onPressed: () {},
-        child: Text(
-          val,
-          style: TextStyle(fontSize: 25.0),
+        onPressed: () => btnClicked(val),
+        child: Expanded(
+          child: Text(
+            val,
+            style: TextStyle(fontSize: 25.0),
+          ),
         ),
       ),
     );
